@@ -15,6 +15,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+    static ArrayList<String> addUrl = new ArrayList<String>();
+    static Intent i;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +29,12 @@ public class MainActivity extends AppCompatActivity {
         final WebView wv = findViewById(R.id.wv);
         ListView lv = findViewById(R.id.lv);
 
-        Intent i = getIntent();
+        i = getIntent();
+        String data = i.getStringExtra(Intent.EXTRA_TEXT);
         i.getType();
         String action = i.getAction();
         String type = i.getType();
-        String data = i.getStringExtra(Intent.EXTRA_TEXT);
 
-        final ArrayList<String> addUrl = new ArrayList<String>();
 
         if (data==null){
             addUrl.add("");
